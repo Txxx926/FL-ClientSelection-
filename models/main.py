@@ -12,7 +12,7 @@ import json
 import traceback
 import tensorflow as tf
 from collections import defaultdict
-
+os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
 # args
 from utils.args import parse_args
 eventlet.monkey_patch()

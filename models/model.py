@@ -122,6 +122,8 @@ class Model(ABC):
         data_loss_list_and_idx = []
         
         for i in range(num_epochs):
+            #print("epoch",i,"--------------------------")
+           
             if i == 0:
                 epoch_result = self.run_epoch(data, data_idx, batch_size, True)
                 data_loss_list_and_idx = epoch_result['data_loss_list_and_idx']

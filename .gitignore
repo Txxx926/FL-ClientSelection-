@@ -15,6 +15,7 @@ models/*/preprocess/__pycache__/
 utils/__pycache__/
 models/cached_timers.json
 models/grad_compress/temp/*
+models/checkpoints
 _build/
 _templates/
 
