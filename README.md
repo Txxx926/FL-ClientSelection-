@@ -1,4 +1,5 @@
-# FedBalancer
+# Project
+# Below is the ReadMe of the original FedBalancer repository
 
 - A systematic federated learning with sample selection to optimize the time-to-accuracy performance
 - Includes an adaptive deadline control scheme that predicts the optimal deadline for each round with varying client data
