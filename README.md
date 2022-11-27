@@ -1,4 +1,6 @@
 # Project
+Implement a data-similarity and clustering based client selection method for fault-tolerance and efficiency in FL.
+Based on original FLASH and FedBalancer Framework.
 # Below is the ReadMe of the original FedBalancer repository
 
 - A systematic federated learning with sample selection to optimize the time-to-accuracy performance
