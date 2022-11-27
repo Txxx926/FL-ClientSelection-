@@ -10,7 +10,6 @@ We evaluated based on five datasets: ```FEMNIST```, ```Celeba```, ```Reddit```, 
 
 ## How to Run the Experiments
 
-### Running the main experiment of the paper in Section 4.2 and 4.3 one by one
 
 1. Go to directory of respective dataset in `data/` for instructions on generating the benchmark dataset
 2. Run (please refer to the list of config files in the subdirectory with respective dataset name in ```configs/```, it contains all the config files for the experiment)
