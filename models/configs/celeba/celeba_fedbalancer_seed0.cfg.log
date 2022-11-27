@@ -1,0 +1,61 @@
+2022-11-27 20:03:27,722 - FL-type - INFO - logger init finished ---- log file: /research/d1/gds/xtan22/FedBalancer/models/configs/celeba/celeba_fedbalancer_seed0.cfg.log
+2022-11-27 20:03:33,587 - FL-type - INFO - read config from /research/d1/gds/xtan22/FedBalancer/models/configs/celeba/celeba_fedbalancer_seed0.cfg
+2022-11-27 20:03:33,602 - FL-type - INFO - no behavior heterogeneity! assume client is availiable at any time.
+2022-11-27 20:03:33,603 - FL-type - INFO - ================= Config =================
+2022-11-27 20:03:33,603 - FL-type - INFO - 	config_name = /research/d1/gds/xtan22/FedBalancer/models/configs/celeba/celeba_fedbalancer_seed0.cfg
+2022-11-27 20:03:33,604 - FL-type - INFO - 	dataset = celeba
+2022-11-27 20:03:33,604 - FL-type - INFO - 	model = cnn
+2022-11-27 20:03:33,604 - FL-type - INFO - 	num_rounds = 6000
+2022-11-27 20:03:33,604 - FL-type - INFO - 	lr = 0.001
+2022-11-27 20:03:33,604 - FL-type - INFO - 	eval_every = 5
+2022-11-27 20:03:33,605 - FL-type - INFO - 	clients_per_round = 100
+2022-11-27 20:03:33,605 - FL-type - INFO - 	min_selected = 1
+2022-11-27 20:03:33,605 - FL-type - INFO - 	max_sample = 2147483647
+2022-11-27 20:03:33,605 - FL-type - INFO - 	batch_size = 10
+2022-11-27 20:03:33,606 - FL-type - INFO - 	seed = 0
+2022-11-27 20:03:33,606 - FL-type - INFO - 	num_epochs = 5
+2022-11-27 20:03:33,606 - FL-type - INFO - 	minibatch = None
+2022-11-27 20:03:33,606 - FL-type - INFO - 	round_ddl = [60.0, 0.0]
+2022-11-27 20:03:33,606 - FL-type - INFO - 	update_frac = 0.01
+2022-11-27 20:03:33,607 - FL-type - INFO - 	max_client_num = 9223372036854775807
+2022-11-27 20:03:33,607 - FL-type - INFO - 	aggregate_algorithm = SucFedAvg
+2022-11-27 20:03:33,607 - FL-type - INFO - 	time_window = [20.0, 0.0]
+2022-11-27 20:03:33,607 - FL-type - INFO - 	user_trace = False
+2022-11-27 20:03:33,608 - FL-type - INFO - 	behav_hete = False
+2022-11-27 20:03:33,608 - FL-type - INFO - 	hard_hete = True
+2022-11-27 20:03:33,608 - FL-type - INFO - 	no_training = False
+2022-11-27 20:03:33,608 - FL-type - INFO - 	real_world = False
+2022-11-27 20:03:33,608 - FL-type - INFO - 	compress_algo = None
+2022-11-27 20:03:33,609 - FL-type - INFO - 	fedprox = False
+2022-11-27 20:03:33,609 - FL-type - INFO - 	fedprox_mu = 0
+2022-11-27 20:03:33,609 - FL-type - INFO - 	structure_k = None
+2022-11-27 20:03:33,609 - FL-type - INFO - 	qffl = False
+2022-11-27 20:03:33,609 - FL-type - INFO - 	qffl_q = 0
+2022-11-27 20:03:33,610 - FL-type - INFO - 	fedbalancer = True
+2022-11-27 20:03:33,610 - FL-type - INFO - 	fb_w = 20
+2022-11-27 20:03:33,610 - FL-type - INFO - 	fb_p = 0.0
+2022-11-27 20:03:33,610 - FL-type - INFO - 	fb_inference_pipelining = True
+2022-11-27 20:03:33,611 - FL-type - INFO - 	noise_factor = 0.0
+2022-11-27 20:03:33,611 - FL-type - INFO - 	fb_simple_control_lt = True
+2022-11-27 20:03:33,611 - FL-type - INFO - 	fb_simple_control_ddl = True
+2022-11-27 20:03:33,611 - FL-type - INFO - 	fb_simple_control_lt_stepsize = 0.05
+2022-11-27 20:03:33,611 - FL-type - INFO - 	fb_simple_control_ddl_stepsize = 0.05
+2022-11-27 20:03:33,612 - FL-type - INFO - 	fb_client_selection = True
+2022-11-27 20:03:33,612 - FL-type - INFO - 	oort_pacer = False
+2022-11-27 20:03:33,612 - FL-type - INFO - 	oort_pacer_delta = 10
+2022-11-27 20:03:33,612 - FL-type - INFO - 	oort_blacklist = False
+2022-11-27 20:03:33,613 - FL-type - INFO - 	oort_blacklist_rounds = 10
+2022-11-27 20:03:33,613 - FL-type - INFO - 	realoort = False
+2022-11-27 20:03:33,613 - FL-type - INFO - 	realoortbalancer = False
+2022-11-27 20:03:33,613 - FL-type - INFO - 	ddl_baseline_smartpc = False
+2022-11-27 20:03:33,613 - FL-type - INFO - 	ddl_baseline_smartpc_percentage = 0.0
+2022-11-27 20:03:33,614 - FL-type - INFO - 	ddl_baseline_fixed = False
+2022-11-27 20:03:33,614 - FL-type - INFO - 	ddl_baseline_fixed_value_multiplied_at_mean = 0.0
+2022-11-27 20:03:33,614 - FL-type - INFO - 	global_final_time = 30000
+2022-11-27 20:03:33,614 - FL-type - INFO - 	global_final_test_accuracy = 0.0
+2022-11-27 20:03:33,614 - FL-type - INFO - 	output_path = ../models/configs/celeba/
+2022-11-27 20:03:33,615 - FL-type - INFO - 	ss_baseline = False
+2022-11-27 20:03:33,615 - FL-type - INFO - ================= ====== =================
+2022-11-27 20:03:33,616 - FL-type - INFO - ############################## celeba.cnn ##############################
+2022-11-27 20:03:46,831 - FL-type - INFO - model size: 124808
+2022-11-27 20:03:46,831 - FL-type - INFO - ======================Setup Clients==========================
