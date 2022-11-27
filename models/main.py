@@ -70,6 +70,7 @@ def main():
     tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 
     # Create 2 models
+    ### learning rate and number of classes
     model_params = MODEL_PARAMS[model_path]
     if cfg.lr != -1:
         model_params_list = list(model_params)
@@ -115,6 +116,7 @@ def main():
             if c.num_train_samples <= 0:
                 assert(False)
         if cfg.ddl_baseline_fixed:
+            ### the fixed deadline
             fixed_deadline = int(np.mean(round_duration_summ_list) * cfg.ddl_baseline_fixed_value_multiplied_at_mean)
         if cfg.fb_client_selection or cfg.realoort:
             oort_initial_deadline = int(np.mean(round_duration_summ_list))
@@ -125,6 +127,7 @@ def main():
     
     # Create server
     if cfg.ddl_baseline_fixed:
+        ### focus on fixed deadline
         server = Server(client_model, clients=train_clients, cfg = cfg, deadline=fixed_deadline)
     elif cfg.fedbalancer or cfg.realoortbalancer:
         server = Server(client_model, clients=train_clients, cfg = cfg, deadline=fb_initial_deadline)
