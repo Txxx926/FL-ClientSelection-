@@ -132,6 +132,7 @@ class Server:
                 if self.client_selected_count[str(c.id)] > self.cfg.oort_blacklist_rounds:
                     blacklist_clients.append(str(c.id))
 
+        ### only used in particulay selection 
         if self.cfg.fb_client_selection or self.cfg.realoort or self.cfg.realoortbalancer:
             # Sort client's recorded loss that is over current self.loss_threshold
             possible_clients_ids = []
@@ -497,6 +498,7 @@ class Server:
         for c in clients:
             c.model.set_params(self.model)
             try:
+                ### unnecessary
                 if self.cfg.fedbalancer or self.cfg.realoortbalancer:
                     c.set_deadline(self.deadline)
                     c.set_loss_threshold(self.loss_threshold, self.upper_loss_threshold)
