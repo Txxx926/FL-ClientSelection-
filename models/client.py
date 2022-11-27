@@ -162,7 +162,7 @@ class Client:
         
         self.is_first_round = True
 
-        self.calculate_y_distribution()
+        #self.calculate_y_distribution()
 
     def calculate_y_distribution(self):
         """
@@ -175,9 +175,9 @@ class Client:
             return (data - np.min(data)) / range.sum()
 
         if self.cfg.dataset=="femnist":
-                total_class=62
-            elif self.cfg.dataset=="80":
-                total_class=80
+            total_class=62
+        elif self.cfg.dataset=="80":
+            total_class=80
 
         if self.train_data!=None:
             y=np.array(self.train_data['y'])

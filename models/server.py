@@ -18,6 +18,30 @@ from baseline_constants import BYTES_WRITTEN_KEY, BYTES_READ_KEY, LOCAL_COMPUTAT
 L = Logger()
 logger = L.get_logger()
 
+
+def H(p, q):
+  # distance between p an d
+  # p and q are np array probability distributions
+  n = len(p)
+  sum = 0.0
+  for i in range(n):
+    sum += (np.sqrt(p[i]) - np.sqrt(q[i]))**2
+
+  result = (1.0 / np.sqrt(2.0)) * np.sqrt(sum)
+  return result
+
+def calculate_distance(all_clients_distributions):
+    dim=len(all_clients_distributions)
+    dist=np.zeros((dim,dim))
+
+    for i in range(dim):
+        for j in range(i,dim):
+            dist[i][j]=H(all_clients_distributions[i],all_clients_distributions[j])
+    
+    return dist
+
+
+
 class Server:
     
     def __init__(self, client_model, clients=[], cfg=None, deadline=0):
@@ -328,6 +352,14 @@ class Server:
 
         # Randomly sample clients if Oort, Oortbalancer, or FedBalancer is not being used
         else:
+            from sklearn.cluster import DBSCAN
+            selected_clients = []
+            label_distribution=np.array([c.calculate_y_distribution() for c in possible_clients])
+            print("select-----",label_distribution.shape)
+            dist=calculate_distance(label_distribution)
+            #print(dist)
+            y_pred = DBSCAN(eps = 0.05, min_samples = 5).fit_predict(label_distribution)
+            print(y_pred)
             self.selected_clients = np.random.choice(possible_clients, num_clients, replace=False)
             
 
