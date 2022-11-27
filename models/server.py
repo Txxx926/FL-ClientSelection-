@@ -329,7 +329,8 @@ class Server:
         # Randomly sample clients if Oort, Oortbalancer, or FedBalancer is not being used
         else:
             self.selected_clients = np.random.choice(possible_clients, num_clients, replace=False)
-        
+            
+
         if self.cfg.oort_blacklist:
             for c in self.selected_clients:
                 self.client_selected_count[str(c.id)] += 1

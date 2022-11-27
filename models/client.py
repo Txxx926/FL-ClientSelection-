@@ -162,6 +162,42 @@ class Client:
         
         self.is_first_round = True
 
+        self.calculate_y_distribution()
+
+    def calculate_y_distribution(self):
+        """
+        Calculate the label distribution of this clients for later clustering. ### Modified By TAN Xin
+        """
+
+
+        def normalization(data):
+            range = (data) - np.min(data)
+            return (data - np.min(data)) / range.sum()
+
+        if self.train_data!=None:
+            y=np.array(self.train_data['y'])
+
+            print("y.distribution:",y.shape)
+
+            if self.cfg.dataset=="femnist":
+                total_class=62
+            elif self.cfg.dataset=="80":
+                total_class=80
+
+            dist_vector=[0 for i in range(total_class)]
+
+            for label in y:
+                dist_vector[label]+=1
+            
+            #print(dist_vector)
+            dist_vector=normalization(dist_vector)
+            #print(dist_vector,sum(dist_vector))
+            return dist_vector
+
+
+        else:
+            return [0 for i in range(self.num_train_samples)]
+
     def train(self, start_t=None, num_epochs=1, batch_size=10, minibatch=None):
         """Trains on self.model using the client's train_data.
 
