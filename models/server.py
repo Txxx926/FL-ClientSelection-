@@ -57,7 +57,7 @@ class Server:
         self.hs = []
         self.clients_info = defaultdict(dict)
         self.structure_updater = None
-
+        self.clustering="OPTICS"
         self.loss_threshold_percentage = 0.0
         self.loss_threshold = 0
         self.upper_loss_threshold = 0 
@@ -352,14 +352,19 @@ class Server:
 
         # Randomly sample clients if Oort, Oortbalancer, or FedBalancer is not being used
         else:
-            from sklearn.cluster import DBSCAN
+            from sklearn.cluster import DBSCAN,OPTICS
             selected_clients = []
             label_distribution=np.array([c.calculate_y_distribution() for c in possible_clients])
             print("select-----",label_distribution.shape)
-            dist=calculate_distance(label_distribution)
+            #dist=calculate_distance(label_distribution)
             #print(dist)
-            y_pred = DBSCAN(eps = 0.05, min_samples = 5).fit_predict(label_distribution)
-            print(y_pred)
+            print(label_distribution)
+            if self.clustering=="OPTICS":
+                print("OPTICS")
+                y_pred = OPTICS(min_samples=3).fit(label_distribution)
+            else:
+                y_pred = DBSCAN(eps = 0.05, min_samples = 5).fit_predict(label_distribution)
+            print(y_pred.labels_)
             self.selected_clients = np.random.choice(possible_clients, num_clients, replace=False)
             
 

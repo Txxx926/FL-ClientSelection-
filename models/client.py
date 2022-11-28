@@ -162,6 +162,8 @@ class Client:
         
         self.is_first_round = True
 
+        self.normalized_distribution=False
+
         #self.calculate_y_distribution()
 
     def calculate_y_distribution(self):
@@ -190,7 +192,8 @@ class Client:
                 dist_vector[label]+=1
             
             #print(dist_vector)
-            dist_vector=normalization(dist_vector)
+            if self.normalized_distribution:
+                dist_vector=normalization(dist_vector)
             #print(dist_vector,sum(dist_vector))
             return dist_vector
 
